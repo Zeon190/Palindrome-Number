@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>palindrome</groupId> <!-- You can change 'yourcompany' to your GitHub username or a project name -->
+    <artifactId>GUI</artifactId> <!-- A descriptive name for your GUI module -->
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>21</maven.compiler.source> <!-- IMPORTANT: Set to your JDK version (e.g., 11, 17, 21) -->
+        <maven.compiler.target>21</maven.compiler.target> <!-- Must match source -->
+        <javafx.version>21</javafx.version> <!-- IMPORTANT: Set to your JDK version -->
+        <!-- This points to your new JavaFX application's main class -->
+        <main.class>com.palindrome.GUI.PalindromeFXApp</main.class>
+    </properties>
+
+    <dependencies>
+        <!-- JavaFX Modules for UI controls -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <!-- JavaFX FXML module (good to include even if not using FXML initially) -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Plugin to compile Java code -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+
+            <!-- JavaFX Maven Plugin - Essential for running and packaging JavaFX apps -->
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <configuration>
+                    <mainClass>${main.class}</mainClass>
+                    <!-- Optional configurations for smaller distribution if you use 'jlink' later -->
+                    <stripDebug>true</stripDebug>
+                    <compress>2</compress>
+                    <noHeaderFiles>true</noHeaderFiles>
+                </configuration>
+                <executions>
+                    <execution>
+                        <!-- Default goal for 'mvn javafx:run' -->
+                        <id>default-cli</id>
+                    </execution>
+                    <execution>
+                        <!-- Goal for building a self-contained application -->
+                        <id>jlink</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jlink</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

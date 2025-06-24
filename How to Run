@@ -1,5 +1,54 @@
-## 📌 How to Run
+---
+## 🛠️ How to Run
 
-1.Make sure you have Java installed** on your system. You can check it by running:
-   bash
-   java -version  
+### Prerequisites
+
+To run either version, you need:
+  - Java Development Kit (JDK) **21 or higher**
+  - Apache Maven (for the JavaFX GUI version)
+---
+
+### Option 1: Running the Console Application (`palindrome.java`)
+
+1. **Navigate to the source directory:**  
+   Open your terminal or command prompt and go to `src/main/java/` within your cloned repository:
+
+   ```bash
+   cd YourClonedRepoName/src/main/java/
+   ```
+
+2. **Compile:**
+
+   ```bash
+   javac palindrome.java
+   ```
+
+3. **Run:**
+
+   ```bash
+   java palindrome
+   ```
+
+4. **Follow the prompts in the console.**
+
+---
+
+### Option 2: Running the JavaFX GUI Application (`PalindromeFXApp.java`)
+
+1. **Navigate to the project root:**  
+   Open your terminal or command prompt and go to the root directory of your cloned repository (where `pom.xml` is located):
+
+   ```bash
+   cd YourClonedRepoName/
+   ```
+
+2. **Compile and Run with Maven:**  
+   Maven will automatically download all necessary JavaFX dependencies and run the application.
+
+   ```bash
+   mvn clean javafx:run
+   ```
+
+   This command will compile the project and then launch the JavaFX GUI window.
+
+---

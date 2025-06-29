@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Number Checker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">🔢 Palindrome Number Checker</h1>
+            <p class="subtitle">Check if a number reads the same backward as forward</p>
+        </header>
+
+        <main class="main-content">
+            <div class="card">
+                <div class="input-section">
+                    <label for="numberInput" class="input-label">Enter a number:</label>
+                    <input 
+                        type="number" 
+                        id="numberInput" 
+                        class="number-input" 
+                        placeholder="e.g., 121, 1331, 12321"
+                        autocomplete="off"
+                    >
+                </div>
+
+                <button id="checkButton" class="check-button">
+                    <span class="button-text">Check Palindrome</span>
+                    <span class="button-icon">🔍</span>
+                </button>
+
+                <div id="result" class="result-section hidden">
+                    <div class="result-content">
+                        <div id="resultIcon" class="result-icon"></div>
+                        <h2 id="resultTitle" class="result-title"></h2>
+                        <p id="resultMessage" class="result-message"></p>
+                    </div>
+                </div>
+
+                <div class="examples">
+                    <h3>💡 Examples:</h3>
+                    <div class="example-grid">
+                        <div class="example-item">
+                            <span class="example-number">121</span>
+                            <span class="example-result palindrome">Palindrome</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="example-number">1331</span>
+                            <span class="example-result palindrome">Palindrome</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="example-number">12321</span>
+                            <span class="example-result palindrome">Palindrome</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="example-number">112</span>
+                            <span class="example-result not-palindrome">Not Palindrome</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="example-number">123</span>
+                            <span class="example-result not-palindrome">Not Palindrome</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="example-number">456</span>
+                            <span class="example-result not-palindrome">Not Palindrome</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
